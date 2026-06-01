@@ -23,8 +23,6 @@
 }
 html{scroll-behavior:smooth;font-size:16px}
 body{background:var(--bg);color:var(--text);font-family:"Exo 2",sans-serif;overflow-x:hidden;cursor:none;transition:background 0.4s,color 0.4s}
-
-/* CURSOR — desktop only */
 @media(min-width:769px){
   .cur{position:fixed;width:8px;height:8px;border-radius:50%;background:var(--text2);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width 0.2s,height 0.2s,background 0.2s}
   .cur-ring{position:fixed;width:30px;height:30px;border-radius:50%;border:1px solid rgba(128,128,128,0.35);pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all 0.12s ease}
@@ -32,12 +30,8 @@ body{background:var(--bg);color:var(--text);font-family:"Exo 2",sans-serif;overf
   .cur-ring.hov{opacity:0}
 }
 @media(max-width:768px){.cur,.cur-ring{display:none}body{cursor:auto}}
-
-/* SCANLINES */
 body::before{content:"";position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.025) 2px,rgba(0,0,0,0.025) 4px);pointer-events:none;z-index:800;opacity:.6}
 [data-theme="light"] body::before{opacity:.15}
-
-/* NAV */
 nav{position:fixed;top:0;width:100%;z-index:600;height:60px;padding:0 2rem;display:flex;justify-content:space-between;align-items:center;transition:background 0.4s,border-color 0.4s;border-bottom:1px solid transparent}
 nav.scrolled{background:rgba(8,8,8,0.93);backdrop-filter:blur(20px);border-color:var(--border)}
 [data-theme="light"] nav.scrolled{background:rgba(240,240,240,0.93)}
@@ -59,8 +53,6 @@ nav.scrolled{background:rgba(8,8,8,0.93);backdrop-filter:blur(20px);border-color
 .mobile-menu.open{display:flex;transform:translateY(0);opacity:1}
 .mobile-menu a{color:var(--text2);text-decoration:none;font-family:"Space Mono",monospace;font-size:.75rem;letter-spacing:3px;text-transform:uppercase;padding:.5rem 0;border-bottom:1px solid var(--border)}
 .nav-progress{position:absolute;bottom:0;left:0;height:1px;background:var(--text2);width:0;transition:width .08s}
-
-/* HERO */
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;z-index:1;padding:80px 2rem 2rem;overflow:hidden}
 .hero-bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:55px 55px;z-index:0}
 [data-theme="light"] .hero-bg-grid{background-image:linear-gradient(rgba(0,0,0,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.04) 1px,transparent 1px)}
@@ -88,8 +80,6 @@ nav.scrolled{background:rgba(8,8,8,0.93);backdrop-filter:blur(20px);border-color
 .h-stat-num{font-family:"Exo 2",sans-serif;font-size:1.9rem;font-weight:900;color:var(--text2);line-height:1}
 .h-stat-unit{font-size:1.1rem;color:var(--muted)}
 .h-stat-lbl{font-family:"Space Mono",monospace;font-size:.52rem;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-top:.2rem}
-
-/* PHOTO */
 .hero-photo{display:flex;justify-content:center;opacity:0;animation:fIn 1.5s .6s forwards;position:relative}
 .p3d-wrap{perspective:900px}
 .p3d{position:relative;width:clamp(220px,28vw,300px);height:clamp(340px,44vw,490px);transform-style:preserve-3d;transition:transform .1s ease-out}
@@ -111,11 +101,7 @@ nav.scrolled{background:rgba(8,8,8,0.93);backdrop-filter:blur(20px);border-color
 .scroll-hint span{font-family:"Space Mono",monospace;font-size:.52rem;letter-spacing:3px;color:var(--muted);text-transform:uppercase}
 .scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,var(--muted),transparent);animation:sAnim 2s ease-in-out infinite}
 @keyframes sAnim{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
-
-/* DIVIDER */
 .divider{width:100%;height:1px;background:var(--border)}
-
-/* STATS BAND */
 .stats-band{max-width:100%;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .stats-inner{display:grid;grid-template-columns:repeat(4,1fr);max-width:1080px;margin:0 auto}
 .stat-cell{padding:2.5rem 2rem;text-align:center;border-right:1px solid var(--border);transition:background .3s}
@@ -124,16 +110,12 @@ nav.scrolled{background:rgba(8,8,8,0.93);backdrop-filter:blur(20px);border-color
 .stat-big{font-family:"Exo 2",sans-serif;font-size:2.8rem;font-weight:900;color:var(--text2);line-height:1}
 .stat-unit{font-size:1.4rem;color:var(--muted)}
 .stat-lbl{font-family:"Space Mono",monospace;font-size:.55rem;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-top:.4rem}
-
-/* SECTIONS */
 .section{padding:6rem 2rem;max-width:1080px;margin:0 auto}
 .sec-meta{display:flex;align-items:center;gap:.8rem;margin-bottom:.6rem}
 .sec-num{font-family:"Space Mono",monospace;font-size:.58rem;color:rgba(128,128,128,.25);letter-spacing:2px}
 .sec-lbl{font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:4px;color:var(--muted);text-transform:uppercase}
 .sec-h{font-family:"Exo 2",sans-serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;color:var(--text2);margin-bottom:3rem;letter-spacing:-1px}
 .sec-h span{color:rgba(128,128,128,.3)}
-
-/* SERVICES */
 .svc-list{display:flex;flex-direction:column}
 .svc-row{display:grid;grid-template-columns:50px 1fr 30px;align-items:start;padding:1.6rem 0;border-bottom:1px solid var(--border);cursor:pointer;transition:background .3s;position:relative;gap:.5rem}
 .svc-row::before{content:"";position:absolute;left:0;top:0;width:0;height:100%;background:rgba(128,128,128,.04);transition:width .4s}
@@ -148,14 +130,10 @@ nav.scrolled{background:rgba(8,8,8,0.93);backdrop-filter:blur(20px);border-color
 .svc-row:hover .svc-name{color:var(--text2)}
 .svc-row:hover .svc-arrow{color:var(--text2);transform:translateX(4px)}
 .svc-row.active .svc-arrow{transform:rotate(90deg);color:var(--text2)}
-
-/* PARALLAX */
 .parallax-sec{position:relative;overflow:hidden;padding:8rem 2rem;display:flex;align-items:center;justify-content:center;text-align:center;background:var(--bg2)}
 .parallax-inner{position:relative;z-index:1;max-width:620px}
 .parallax-inner h2{font-family:"Exo 2",sans-serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:900;color:var(--text2);letter-spacing:-1px;margin-bottom:1rem}
 .parallax-inner p{font-size:1rem;font-weight:300;color:var(--text3);line-height:1.85;margin-bottom:2rem}
-
-/* TIMELINE */
 .tl{position:relative;padding-left:1.8rem}
 .tl::before{content:"";position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--border)}
 .tl-item{position:relative;padding:0 0 2.5rem 1.8rem;opacity:0;transform:translateX(-16px);transition:opacity .5s,transform .5s}
@@ -165,8 +143,6 @@ nav.scrolled{background:rgba(8,8,8,0.93);backdrop-filter:blur(20px);border-color
 .tl-year{font-family:"Space Mono",monospace;font-size:.58rem;color:var(--muted);letter-spacing:2px;margin-bottom:.35rem}
 .tl-title{font-family:"Exo 2",sans-serif;font-size:1rem;font-weight:600;color:var(--text2);margin-bottom:.3rem}
 .tl-desc{font-size:.88rem;font-weight:300;color:var(--text);line-height:1.7}
-
-/* TESTIMONIALS */
 .testi-wrap{overflow:hidden}
 .testi-track{display:flex;gap:1.5rem;transition:transform .5s cubic-bezier(.16,1,.3,1)}
 .testi-card{min-width:clamp(260px,80vw,340px);background:var(--card);border:1px solid var(--border);padding:1.8rem;flex-shrink:0;transition:border-color .3s}
@@ -183,8 +159,6 @@ nav.scrolled{background:rgba(8,8,8,0.93);backdrop-filter:blur(20px);border-color
 .testi-dots{display:flex;gap:.4rem}
 .tdot{width:6px;height:6px;border-radius:50%;background:var(--border);transition:background .3s;cursor:pointer}
 .tdot.active{background:var(--text2)}
-
-/* CONTACT */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
 .c-tagline{font-size:.98rem;font-weight:300;color:var(--text3);line-height:1.9;margin-bottom:2.5rem}
 .c-item{display:flex;align-items:center;gap:.9rem;padding:1.1rem 0;border-bottom:1px solid var(--border);transition:all .3s}
@@ -198,16 +172,12 @@ nav.scrolled{background:rgba(8,8,8,0.93);backdrop-filter:blur(20px);border-color
 .cta-box p{font-size:.9rem;font-weight:300;color:var(--text);line-height:1.75;margin-bottom:2rem}
 .cta-lnk{display:flex;align-items:center;gap:.7rem;padding:.9rem 1.4rem;border:1px solid var(--border);color:var(--text3);text-decoration:none;font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:2px;text-transform:uppercase;transition:all .3s;margin-bottom:.7rem}
 .cta-lnk:hover{border-color:var(--text2);color:var(--text2);background:rgba(128,128,128,.04)}
-
-/* FOOTER */
 footer{border-top:1px solid var(--border);padding:1.8rem 2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
 .ft-copy{font-family:"Space Mono",monospace;font-size:.58rem;color:rgba(128,128,128,.28);letter-spacing:2px;text-transform:uppercase}
 .ft-copy span{color:rgba(128,128,128,.55)}
 .ft-links{display:flex;gap:1.5rem}
 .ft-links a{font-family:"Space Mono",monospace;font-size:.58rem;color:rgba(128,128,128,.25);letter-spacing:2px;text-decoration:none;text-transform:uppercase;transition:color .3s}
 .ft-links a:hover{color:var(--text)}
-
-/* CHATBOT */
 #cb-toggle{position:fixed;bottom:1.8rem;right:1.8rem;width:48px;height:48px;background:var(--text2);color:var(--bg);border:none;cursor:pointer;font-size:1.1rem;z-index:700;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px var(--shadow);transition:transform .3s}
 #cb-toggle:hover{transform:scale(1.08)}
 #chatbot{position:fixed;bottom:5rem;right:1.8rem;width:clamp(280px,90vw,320px);background:var(--bg2);border:1px solid var(--border);z-index:700;display:flex;flex-direction:column;transform:translateY(16px) scale(.96);opacity:0;pointer-events:none;transition:all .3s;box-shadow:0 8px 40px var(--shadow)}
@@ -221,8 +191,11 @@ footer{border-top:1px solid var(--border);padding:1.8rem 2rem;display:flex;justi
 .msg{max-width:86%;padding:.55rem .85rem;font-size:.82rem;font-weight:300;line-height:1.55;word-break:break-word}
 .msg.bot{background:rgba(128,128,128,.1);color:var(--text2);align-self:flex-start;border-left:2px solid rgba(128,128,128,.25)}
 .msg.user{background:rgba(128,128,128,.15);color:var(--text2);align-self:flex-end;border-right:2px solid var(--text2)}
-.msg.typing::after{content:"...";animation:dots 1s infinite}
-@keyframes dots{0%{content:"."}33%{content:".."}66%{content:"..."}}
+.typing-dots{display:inline-flex;gap:3px;padding:2px 0}
+.typing-dots span{width:5px;height:5px;border-radius:50%;background:var(--muted);animation:dotPop .9s infinite}
+.typing-dots span:nth-child(2){animation-delay:.2s}
+.typing-dots span:nth-child(3){animation-delay:.4s}
+@keyframes dotPop{0%,80%,100%{transform:scale(0.6);opacity:.4}40%{transform:scale(1);opacity:1}}
 .cb-chips{padding:.5rem .7rem;display:flex;flex-wrap:wrap;gap:.35rem;border-bottom:1px solid var(--border)}
 .chip{font-family:"Space Mono",monospace;font-size:.52rem;letter-spacing:1px;padding:.28rem .55rem;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;transition:all .2s;text-transform:lowercase}
 .chip:hover{border-color:var(--text2);color:var(--text2)}
@@ -232,17 +205,12 @@ footer{border-top:1px solid var(--border);padding:1.8rem 2rem;display:flex;justi
 .cb-inp::placeholder{color:var(--muted)}
 .cb-send{background:var(--text2);color:var(--bg);border:none;padding:.45rem .8rem;cursor:pointer;font-family:"Space Mono",monospace;font-size:.58rem;letter-spacing:1px;transition:opacity .2s;flex-shrink:0}
 .cb-send:hover{opacity:.85}
-
-/* REVEAL */
 .rev{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
 .rev.vis{opacity:1;transform:translateY(0)}
 .rev-left{opacity:0;transform:translateX(-24px);transition:opacity .65s ease,transform .65s ease}
 .rev-left.vis{opacity:1;transform:translateX(0)}
-
 @keyframes fUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fIn{from{opacity:0}to{opacity:1}}
-
-/* RESPONSIVE */
 @media(max-width:900px){
   .contact-grid{grid-template-columns:1fr}
   .hero-inner{grid-template-columns:1fr;gap:2.5rem}
@@ -279,7 +247,6 @@ footer{border-top:1px solid var(--border);padding:1.8rem 2rem;display:flex;justi
 <div class="cur-ring" id="curRing"></div>
 
 <nav id="nav">
-  <!-- SVG LOGO -->
   <svg class="logo-svg" viewBox="0 0 140 36" fill="none" xmlns="http://www.w3.org/2000/svg">
     <text y="26" font-family="Space Mono,monospace" font-size="11" font-weight="700" fill="currentColor" letter-spacing="1" style="fill:var(--text2)">W</text>
     <text x="14" y="26" font-family="Space Mono,monospace" font-size="11" font-weight="700" fill="currentColor" letter-spacing="1" style="fill:var(--muted)">.</text>
@@ -306,7 +273,6 @@ footer{border-top:1px solid var(--border);padding:1.8rem 2rem;display:flex;justi
   <a href="#contact" onclick="closeMMenu()">Contact</a>
 </div>
 
-<!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero-bg-grid"></div>
   <div class="hero-glow"></div>
@@ -326,22 +292,14 @@ footer{border-top:1px solid var(--border);padding:1.8rem 2rem;display:flex;justi
         <div><div class="h-stat-num"><span class="cntup" data-t="100">0</span><span class="h-stat-unit">%</span></div><div class="h-stat-lbl">On-Time</div></div>
       </div>
     </div>
-    <div class="hero-photo" style="display: flex !important; justify-content: center !important; align-items: center !important; width: 100% !important;">
-  
-  <div class="photo-wrap" style="width: 100% !important; max-width: 260px !important; height: 460px !important; position: relative !important; overflow: hidden !important; border-radius: 4px !important; box-shadow: 0 20px 40px rgba(0,0,0,0.6) !important;">
-    
-    <img src="wahb.png" alt="Muhammad Wahab" style="width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; filter: brightness(0.85) contrast(1.1) grayscale(1) !important; transition: filter 0.4s ease !important;" onmouseover="this.style.filter='brightness(1) contrast(1) grayscale(0.1)'" onmouseout="this.style.filter='brightness(0.85) contrast(1.1) grayscale(1)'">
-    
-    <div style="position: absolute !important; top: 0; left: 0; width: 100%; height: 100%; border: 1px solid rgba(255,255,255,0.08); pointer-events: none;"></div>
-    <div style="position: absolute !important; top: 0; left: 0; width: 12px; height: 12px; border-top: 2px solid #ffffff; border-left: 2px solid #ffffff; pointer-events: none;"></div>
-    <div style="position: absolute !important; bottom: 0; right: 0; width: 12px; height: 12px; border-bottom: 2px solid #ffffff; border-right: 2px solid #ffffff; pointer-events: none;"></div>
-    
-    <div style="position: absolute !important; bottom: 8px !important; right: 12px !important; font-family: 'Space Mono', monospace !important; font-size: 8px !important; color: rgba(255, 255, 255, 0.4) !important; letter-spacing: 1px !important; z-index: 5 !important; pointer-events: none !important; background: rgba(0,0,0,0.7); padding: 2px 6px; border-radius: 2px;">
-      SYS.LOC // KHI
-    </div>
-  </div>
-  
-</div>
+    <div class="hero-photo" style="display:flex!important;justify-content:center!important;align-items:center!important;width:100%!important;">
+      <div class="photo-wrap" style="width:100%!important;max-width:260px!important;height:460px!important;position:relative!important;overflow:hidden!important;border-radius:4px!important;box-shadow:0 20px 40px rgba(0,0,0,0.6)!important;">
+        <img src="wahb.png" alt="Muhammad Wahab" style="width:100%!important;height:100%!important;object-fit:cover!important;display:block!important;filter:brightness(0.85) contrast(1.1) grayscale(1)!important;transition:filter 0.4s ease!important;" onmouseover="this.style.filter='brightness(1) contrast(1) grayscale(0.1)'" onmouseout="this.style.filter='brightness(0.85) contrast(1.1) grayscale(1)'">
+        <div style="position:absolute!important;top:0;left:0;width:100%;height:100%;border:1px solid rgba(255,255,255,0.08);pointer-events:none;"></div>
+        <div style="position:absolute!important;top:0;left:0;width:12px;height:12px;border-top:2px solid #ffffff;border-left:2px solid #ffffff;pointer-events:none;"></div>
+        <div style="position:absolute!important;bottom:0;right:0;width:12px;height:12px;border-bottom:2px solid #ffffff;border-right:2px solid #ffffff;pointer-events:none;"></div>
+        <div style="position:absolute!important;bottom:8px!important;right:12px!important;font-family:'Space Mono',monospace!important;font-size:8px!important;color:rgba(255,255,255,0.4)!important;letter-spacing:1px!important;z-index:5!important;pointer-events:none!important;background:rgba(0,0,0,0.7);padding:2px 6px;border-radius:2px;">SYS.LOC // KHI</div>
+      </div>
     </div>
   </div>
   <div class="scroll-hint"><span>Scroll</span><div class="scroll-line"></div></div>
@@ -349,7 +307,6 @@ footer{border-top:1px solid var(--border);padding:1.8rem 2rem;display:flex;justi
 
 <div class="divider"></div>
 
-<!-- STATS BAND -->
 <div class="stats-band rev">
   <div class="stats-inner">
     <div class="stat-cell"><div class="stat-big"><span class="cntup" data-t="3">0</span><span class="stat-unit">+</span></div><div class="stat-lbl">Years Exp.</div></div>
@@ -361,7 +318,6 @@ footer{border-top:1px solid var(--border);padding:1.8rem 2rem;display:flex;justi
 
 <div class="divider"></div>
 
-<!-- SERVICES -->
 <section class="section" id="services">
   <div class="sec-meta rev"><span class="sec-num">01</span><span class="sec-lbl">// What I Do</span></div>
   <h2 class="sec-h rev">My <span>Services</span></h2>
@@ -398,7 +354,6 @@ footer{border-top:1px solid var(--border);padding:1.8rem 2rem;display:flex;justi
 
 <div class="divider"></div>
 
-<!-- PARALLAX CTA -->
 <div class="parallax-sec" id="pSec">
   <div class="parallax-inner rev">
     <h2>Built to <span style="color:rgba(128,128,128,.35)">Convert.</span></h2>
@@ -409,7 +364,6 @@ footer{border-top:1px solid var(--border);padding:1.8rem 2rem;display:flex;justi
 
 <div class="divider"></div>
 
-<!-- TIMELINE -->
 <section class="section" id="timeline">
   <div class="sec-meta rev-left"><span class="sec-num">02</span><span class="sec-lbl">// My Journey</span></div>
   <h2 class="sec-h rev">Career <span>Timeline</span></h2>
@@ -423,7 +377,6 @@ footer{border-top:1px solid var(--border);padding:1.8rem 2rem;display:flex;justi
 
 <div class="divider"></div>
 
-<!-- TESTIMONIALS -->
 <section class="section" id="testimonials">
   <div class="sec-meta rev"><span class="sec-num">03</span><span class="sec-lbl">// Client Reviews</span></div>
   <h2 class="sec-h rev">Testimonials</h2>
@@ -444,7 +397,6 @@ footer{border-top:1px solid var(--border);padding:1.8rem 2rem;display:flex;justi
 
 <div class="divider"></div>
 
-<!-- CONTACT -->
 <section class="section" id="contact">
   <div class="sec-meta rev"><span class="sec-num">04</span><span class="sec-lbl">// Let's Work Together</span></div>
   <h2 class="sec-h rev">Get In <span>Touch</span></h2>
@@ -470,7 +422,6 @@ footer{border-top:1px solid var(--border);padding:1.8rem 2rem;display:flex;justi
   <div class="ft-links"><a href="#hero">Top ↑</a><a href="#services">Services</a><a href="#contact">Contact</a></div>
 </footer>
 
-<!-- CHATBOT -->
 <button id="cb-toggle" onclick="toggleCB()" aria-label="Chat">💬</button>
 <div id="chatbot">
   <div class="cb-head"><span class="cb-title">// Ask Anything</span><button class="cb-close" onclick="toggleCB()">✕</button></div>
@@ -482,7 +433,7 @@ footer{border-top:1px solid var(--border);padding:1.8rem 2rem;display:flex;justi
     <button class="chip" onclick="chipSend(this.textContent)">skills?</button>
   </div>
   <div class="cb-body" id="cbBody">
-    <div class="msg bot">Hey! 👋 I'm Wahb's assistant. Ask me anything about his work, services, pricing, or how to reach him!</div>
+    <div class="msg bot">Hey! 👋 I'm Wahb's assistant. Ask me anything about his services, pricing, or how to reach him!</div>
   </div>
   <div class="cb-inp-row">
     <input class="cb-inp" id="cbInp" placeholder="Ask me anything..." onkeydown="if(event.key==='Enter')cbSend()">
@@ -492,198 +443,292 @@ footer{border-top:1px solid var(--border);padding:1.8rem 2rem;display:flex;justi
 
 <script>
 // CURSOR
-const cur=document.getElementById("cur"),curR=document.getElementById("curRing");
+var cur=document.getElementById("cur"),curR=document.getElementById("curRing");
 if(cur){
-  let mx=0,my=0,rx=0,ry=0;
-  document.addEventListener("mousemove",e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+"px";cur.style.top=my+"px"});
+  var mx=0,my=0,rx=0,ry=0;
+  document.addEventListener("mousemove",function(e){mx=e.clientX;my=e.clientY;cur.style.left=mx+"px";cur.style.top=my+"px"});
   (function aR(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;if(curR){curR.style.left=rx+"px";curR.style.top=ry+"px"}requestAnimationFrame(aR)})();
-  document.querySelectorAll("a,button,.svc-row,.testi-card,.chip,.cta-lnk").forEach(el=>{
-    el.addEventListener("mouseenter",()=>{cur.classList.add("hov");if(curR)curR.classList.add("hov")});
-    el.addEventListener("mouseleave",()=>{cur.classList.remove("hov");if(curR)curR.classList.remove("hov")});
+  document.querySelectorAll("a,button,.svc-row,.testi-card,.chip,.cta-lnk").forEach(function(el){
+    el.addEventListener("mouseenter",function(){cur.classList.add("hov");if(curR)curR.classList.add("hov")});
+    el.addEventListener("mouseleave",function(){cur.classList.remove("hov");if(curR)curR.classList.remove("hov")});
   });
 }
 
-// NAV SCROLL + PROGRESS
-const nav=document.getElementById("nav"),prog=document.getElementById("navProg");
-window.addEventListener("scroll",()=>{
+// NAV
+var nav=document.getElementById("nav"),prog=document.getElementById("navProg");
+window.addEventListener("scroll",function(){
   nav.classList.toggle("scrolled",window.scrollY>40);
   if(prog)prog.style.width=((window.scrollY/(document.body.scrollHeight-window.innerHeight))*100)+"%";
 });
 
 // THEME
-document.getElementById("themeBtn").addEventListener("click",()=>{
-  const h=document.documentElement;
-  const isDark=h.getAttribute("data-theme")==="dark";
+document.getElementById("themeBtn").addEventListener("click",function(){
+  var h=document.documentElement;
+  var isDark=h.getAttribute("data-theme")==="dark";
   h.setAttribute("data-theme",isDark?"light":"dark");
   document.getElementById("themeBtn").textContent=isDark?"◑":"◐";
 });
 
 // HAMBURGER
 function closeMMenu(){document.getElementById("mobileMenu").classList.remove("open");document.getElementById("ham").classList.remove("open")}
-document.getElementById("ham").addEventListener("click",()=>{
+document.getElementById("ham").addEventListener("click",function(){
   document.getElementById("mobileMenu").classList.toggle("open");
   document.getElementById("ham").classList.toggle("open");
 });
 
-// 3D TILT
-const pw=document.getElementById("p3dw"),pc=document.getElementById("p3d");
-if(pw&&window.innerWidth>768){
-  pw.addEventListener("mousemove",e=>{
-    const r=pw.getBoundingClientRect();
-    const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
-    pc.style.transform=`rotateY(${x*14}deg) rotateX(${-y*14}deg)`;
-  });
-  pw.addEventListener("mouseleave",()=>{pc.style.transform="rotateY(0) rotateX(0)"});
-}
-
 // SCROLL REVEAL
-const revObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("vis")})},{threshold:.1});
-document.querySelectorAll(".rev,.rev-left").forEach(el=>revObs.observe(el));
+var revObs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add("vis")})},{threshold:.1});
+document.querySelectorAll(".rev,.rev-left").forEach(function(el){revObs.observe(el)});
 
-// TIMELINE REVEAL
-const tlObs=new IntersectionObserver(es=>{es.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add("vis"),i*120)})},{threshold:.1});
-document.querySelectorAll(".tl-item").forEach(el=>tlObs.observe(el));
+// TIMELINE
+var tlObs=new IntersectionObserver(function(es){es.forEach(function(e,i){if(e.isIntersecting)setTimeout(function(){e.target.classList.add("vis")},i*120)})},{threshold:.1});
+document.querySelectorAll(".tl-item").forEach(function(el){tlObs.observe(el)});
 
 // COUNT UP
 function doCount(el){
-  const t=parseInt(el.dataset.t);let c=0;
-  const step=Math.max(1,t/55);
-  const tmr=setInterval(()=>{c+=step;if(c>=t){c=t;clearInterval(tmr)}el.textContent=Math.floor(c)},18);
+  var t=parseInt(el.dataset.t);var c=0;
+  var step=Math.max(1,t/55);
+  var tmr=setInterval(function(){c+=step;if(c>=t){c=t;clearInterval(tmr)}el.textContent=Math.floor(c)},18);
 }
-const cObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){doCount(e.target);cObs.unobserve(e.target)}})},{threshold:.5});
-document.querySelectorAll(".cntup").forEach(el=>cObs.observe(el));
+var cObs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){doCount(e.target);cObs.unobserve(e.target)}})},{threshold:.5});
+document.querySelectorAll(".cntup").forEach(function(el){cObs.observe(el)});
 
 // PARALLAX
-const pBg=document.getElementById("pSec");
-window.addEventListener("scroll",()=>{if(pBg){const r=pBg.getBoundingClientRect();pBg.style.backgroundPositionY=(r.top*.08)+"px"}});
+var pBg=document.getElementById("pSec");
+window.addEventListener("scroll",function(){if(pBg){var r=pBg.getBoundingClientRect();pBg.style.backgroundPositionY=(r.top*.08)+"px"}});
 
-// SERVICES TOGGLE
+// SERVICES
 function toggleSvc(row){
-  const d=row.querySelector(".svc-desc");
-  const was=d.classList.contains("open");
-  document.querySelectorAll(".svc-desc").forEach(x=>x.classList.remove("open"));
-  document.querySelectorAll(".svc-row").forEach(x=>x.classList.remove("active"));
+  var d=row.querySelector(".svc-desc");
+  var was=d.classList.contains("open");
+  document.querySelectorAll(".svc-desc").forEach(function(x){x.classList.remove("open")});
+  document.querySelectorAll(".svc-row").forEach(function(x){x.classList.remove("active")});
   if(!was){d.classList.add("open");row.classList.add("active")}
 }
 
 // TESTIMONIALS
-let tIdx=0;
-const cards=document.querySelectorAll(".testi-card");
-const dots=document.getElementById("tdots");
-cards.forEach((_,i)=>{const d=document.createElement("div");d.className="tdot"+(i===0?" active":"");d.onclick=()=>goTesti(i);dots.appendChild(d)});
+var tIdx=0;
+var cards=document.querySelectorAll(".testi-card");
+var dots=document.getElementById("tdots");
+cards.forEach(function(_,i){var d=document.createElement("div");d.className="tdot"+(i===0?" active":"");d.onclick=function(){goTesti(i)};dots.appendChild(d)});
 function goTesti(i){
   tIdx=i;
-  const w=document.querySelector(".testi-card").offsetWidth+24;
-  document.getElementById("ttrack").style.transform=`translateX(-${tIdx*w}px)`;
-  document.querySelectorAll(".tdot").forEach((d,j)=>d.classList.toggle("active",j===i));
+  var w=document.querySelector(".testi-card").offsetWidth+24;
+  document.getElementById("ttrack").style.transform="translateX(-"+(tIdx*w)+"px)";
+  document.querySelectorAll(".tdot").forEach(function(d,j){d.classList.toggle("active",j===i)});
 }
 function moveTesti(dir){goTesti(Math.max(0,Math.min(cards.length-1,tIdx+dir)))}
 
 // SMOOTH SCROLL
-document.querySelectorAll("a[href^=\'#\']").forEach(a=>{
-  a.addEventListener("click",e=>{
-    const t=document.querySelector(a.getAttribute("href"));
+document.querySelectorAll("a[href^='#']").forEach(function(a){
+  a.addEventListener("click",function(e){
+    var t=document.querySelector(a.getAttribute("href"));
     if(t){e.preventDefault();t.scrollIntoView({behavior:"smooth",block:"start"})}
   });
 });
 
-// AI CHATBOT
-const SITE_CONTEXT = `
-You are the virtual assistant on Muhammad Wahb's portfolio website. Answer ONLY based on this info:
+// ============================================================
+// SMART CHATBOT — Works with OR without Claude API
+// ============================================================
+var KB = {
+  greet:      ["hey","hello","hi","salam","assalam","helo","hii","sup","yo","kese","kaise","what's up"],
+  name:       ["name","kaun","who are you","kon ho","wahb","muhammad","about you","about him"],
+  services:   ["service","kya karta","what do","offer","provide","kya offer","kaam","work","help"],
+  frontend:   ["front","frontend","html","css","javascript","js","react","website","web","responsive","landing page"],
+  uiux:       ["ui","ux","design","figma","wireframe","prototype","interface","mockup","layout","graphic"],
+  wordpress:  ["wordpress","wp","woocommerce","ecommerce","store","shop","theme","plugin","cms","blog"],
+  pricing:    ["price","cost","kitna","charge","rate","budget","fee","payment","how much","kharcha","paisay","charges"],
+  timeline:   ["time","kitna time","how long","delivery","fast","deadline","days","week","kab","deliver","duration","kitne din"],
+  contact:    ["contact","reach","whatsapp","email","phone","number","call","message","baat","kaise milun","connect"],
+  location:   ["karachi","pakistan","where","kahan","location","city","based","from","country"],
+  experience: ["experience","kitne saal","years","expert","kab se","since","how long","senior","junior","seniority"],
+  skills:     ["skill","tools","tech","stack","software","technologies","language","use karta","program"],
+  projects:   ["project","portfolio","work done","kitne","examples","past","previous","client","done"],
+  available:  ["available","free","open","hire","book","start","begin","abhi","now","busy","kab free"],
+  quality:    ["quality","good","best","guarantee","revision","change","satisfaction","result","refund","redo"],
+  mobile:     ["mobile app","android","ios","flutter","native app","phone app","react native"],
+  seo:        ["seo","google","rank","search","optimization","traffic","keywords"],
+  hosting:    ["host","hosting","domain","server","deploy","vercel","cpanel","namecheap","netlify"],
+  rush:       ["rush","urgent","jaldi","emergency","asap","fast delivery","quick","express"],
+  thanks:     ["thanks","thank","shukriya","jazakallah","great","awesome","perfect","nice","acha","theek","brilliant","excellent"]
+};
 
-NAME: Muhammad Wahb
-LOCATION: Karachi, Pakistan
-EMAIL: wahbdesigns@gmail.com
-WHATSAPP: +92 303 2814496
+var ANSWERS = {
+  greet:[
+    "Hey! 👋 Welcome to Wahb's portfolio. What would you like to know — services, pricing, or how to hire him?",
+    "Hi there! 😊 I'm Wahb's virtual assistant. Ask me anything about his work, costs, or availability!",
+    "Salam! 👋 You're on Muhammad Wahb's portfolio. Ask away — services, pricing, timeline, or contact info!"
+  ],
+  name:[
+    "I'm the assistant for Muhammad Wahb — Front-End Developer, UI/UX Designer, and WordPress expert based in Karachi, Pakistan.",
+    "This is Muhammad Wahb's portfolio. He's a full-stack digital creator from Karachi with 3+ years of experience building websites and designing interfaces.",
+    "Muhammad Wahb is a Front-End Dev, UI/UX Designer & WordPress Developer from Karachi, Pakistan. 3+ years, 50+ projects delivered!"
+  ],
+  services:[
+    "Wahb offers 3 core services:\n⚡ Front-End Development (HTML, CSS, JS, React)\n🎨 UI/UX Design (Figma, wireframes, prototypes)\n🔧 WordPress Development (custom themes, WooCommerce)\nWhich one interests you?",
+    "Three things Wahb does brilliantly:\n1. Custom websites (HTML/CSS/JS/React)\n2. UI/UX design in Figma\n3. Full WordPress builds with WooCommerce\nAsk about any specific service!",
+    "Wahb is a complete package — he designs AND develops. Services: Front-End Dev, UI/UX Design, and WordPress. Want details on pricing or timeline?"
+  ],
+  frontend:[
+    "Front-End Development: Wahb builds clean, fast, fully responsive websites using HTML, CSS, JavaScript, and React. Pixel-perfect on every screen size. Starting from PKR 15,000.",
+    "He builds modern websites from scratch — HTML, CSS, JS, React. Responsive, optimized for speed, and cross-browser tested. Delivery: 3–7 days depending on complexity.",
+    "Front-End work covers landing pages, multi-page business sites, and React apps. All mobile-first, SEO-friendly, and delivered with clean code."
+  ],
+  uiux:[
+    "UI/UX Design: Wahb works in Figma — wireframes, full mockups, and clickable prototypes. He focuses on user psychology so the design actually converts visitors to clients.",
+    "Design services include user research, wireframing, high-fidelity Figma designs, and interactive prototypes. Great for apps, websites, and dashboards.",
+    "Wahb designs interfaces that look stunning AND make sense to users. Figma-based, revisions included, and always user-first approach."
+  ],
+  wordpress:[
+    "WordPress Development: fully custom themes (no page-builder shortcuts), WooCommerce stores, plugin setup, SEO optimization, and speed tuning. PKR 20,000+.",
+    "Wahb builds WordPress sites end-to-end — design, development, WooCommerce for online stores, SEO setup, and performance optimization. Handed over with a tutorial!",
+    "For WordPress he handles everything: custom theme design, WooCommerce, payment gateways, shipping, security, and speed. Full package, no cutting corners."
+  ],
+  pricing:[
+    "Pricing guide:\n• Landing page: PKR 15,000+\n• Full website: PKR 30,000–80,000\n• UI/UX design: PKR 10,000–40,000\n• WordPress site: PKR 20,000–60,000\nFor exact quote WhatsApp: +92 303 2814496",
+    "Rough costs:\n• Simple site: PKR 15k–30k\n• Full custom build: PKR 50k–80k+\n• Design only: PKR 10k–40k\n• WooCommerce store: PKR 40k–80k+\nBest to discuss your project first!",
+    "Pricing depends on scope. Ballpark: landing pages PKR 15k+, full websites PKR 30k–80k, design projects PKR 10k–40k. Free consultation available on WhatsApp!"
+  ],
+  timeline:[
+    "Delivery times:\n• Simple landing page: 3–5 days\n• Full multi-page site: 7–14 days\n• WordPress + WooCommerce: 10–21 days\n• UI/UX design: 5–10 days\nRush delivery available!",
+    "Wahb is known for fast delivery. Simple sites in 3–5 days, full projects in 1–3 weeks. 100% on-time track record across 50+ projects!",
+    "Timeline depends on complexity. Quick sites: 3–5 days. Full builds: 1–3 weeks. Tight deadline? Rush delivery is available — just ask on WhatsApp."
+  ],
+  contact:[
+    "Reach Wahb here:\n📱 WhatsApp: +92 303 2814496 (fastest!)\n✉️ Email: wahbdesigns@gmail.com\nHe typically replies within a few hours.",
+    "Best way to connect:\n• WhatsApp: +92 303 2814496 — fastest response\n• Email: wahbdesigns@gmail.com — for detailed briefs\nBased in Karachi, works globally!",
+    "Contact Wahb:\nWhatsApp +92 303 2814496 for quick chat, or email wahbdesigns@gmail.com for project briefs. Usually replies same day!"
+  ],
+  location:[
+    "Wahb is based in Karachi, Pakistan 🇵🇰 but works with clients globally — Pakistan, UAE, UK, USA. Location is no barrier for great work!",
+    "Karachi, Pakistan. He works 100% remotely with clients worldwide. Communication via WhatsApp and email, project delivery online.",
+    "Based in Karachi, Pakistan. Serves local and international clients with no issues. Remote collaboration is his norm!"
+  ],
+  experience:[
+    "3+ years of professional experience. Started coding in 2021, added UI/UX design in 2022, then WordPress in 2023. Now a full-stack digital creator with 50+ projects.",
+    "Wahb has been building since 2021 — 3+ years, 50+ projects, 45+ happy clients. Self-taught, portfolio-proven, constantly improving.",
+    "3 years of focused work across front-end dev, UI/UX design, and WordPress. Not just experience — actual delivered projects with real results."
+  ],
+  skills:[
+    "Tech stack:\n• Front-End: HTML, CSS, JavaScript, React\n• Design: Figma\n• CMS: WordPress, WooCommerce\n• Tools: Git, VS Code, Vercel, cPanel",
+    "Skills include: HTML, CSS, JavaScript, React, Figma, WordPress, WooCommerce, Git, SEO basics, and performance optimization.",
+    "Design: Figma. Development: HTML/CSS/JS/React. CMS: WordPress + WooCommerce. Deployment: Vercel, Netlify, cPanel. Version control: Git."
+  ],
+  projects:[
+    "50+ projects completed! Mix of landing pages, business websites, e-commerce stores, UI/UX designs, and WordPress builds for clients across Pakistan and beyond.",
+    "Wahb has delivered 50+ projects for 45+ clients — from simple landing pages to full WooCommerce stores and complete UI redesigns.",
+    "Portfolio includes 50+ completed projects: custom websites, WordPress stores, mobile UI designs, and brand identities. All delivered on time!"
+  ],
+  available:[
+    "Yes! Wahb is currently open to new projects. 🟢 WhatsApp him at +92 303 2814496 to discuss your project and get started right away.",
+    "Open to work! Reach out on WhatsApp (+92 303 2814496) or email wahbdesigns@gmail.com to check his current schedule and book a slot.",
+    "Currently available for new projects! Best to reach out quickly — slots fill up. WhatsApp: +92 303 2814496"
+  ],
+  quality:[
+    "Quality is non-negotiable. Revisions are included until you are 100% satisfied — no extra charge. Your approval is the only finish line.",
+    "Wahb treats every project like his own business. Unlimited revisions, on-time delivery, and post-launch support are all standard.",
+    "100% client satisfaction track record. He doesn't close a project until the client genuinely loves it. Revisions always included!"
+  ],
+  mobile:[
+    "Wahb builds mobile-responsive websites — not native apps. All his sites look and work perfectly on phones and tablets. For native Android/iOS apps, he can refer a specialist.",
+    "No native app development, but every website he builds is fully mobile-first and responsive. Flawless on any screen size!"
+  ],
+  seo:[
+    "SEO is included in all WordPress builds — meta tags, schema markup, XML sitemap, speed optimization, and Google-friendly URL structure. On-page SEO covered!",
+    "Yes, SEO basics come standard with WordPress projects. Wahb handles on-page SEO, Google PageSpeed optimization, and clean semantic code."
+  ],
+  hosting:[
+    "Wahb helps with domain + hosting setup (Namecheap, Hostinger, cPanel) and deployment to Vercel or Netlify. The handoff is smooth — he sets everything up for you!",
+    "He recommends Hostinger or Namecheap for Pakistani clients. Also deploys to Vercel and Netlify for static sites. Doesn't sell hosting but sets it all up for you!"
+  ],
+  rush:[
+    "Rush delivery is available! For urgent projects, WhatsApp Wahb at +92 303 2814496 — tell him your deadline and he'll let you know if he can fit it in.",
+    "Tight deadline? Wahb offers express delivery for an additional fee. Message him on WhatsApp: +92 303 2814496 with your timeline."
+  ],
+  thanks:[
+    "You're welcome! 😊 If you want to start a project, WhatsApp Wahb at +92 303 2814496 — he'd love to work with you!",
+    "Glad I could help! Ready to start a project? Reach Wahb on wahbdesigns@gmail.com or WhatsApp +92 303 2814496 🙌",
+    "Anytime! If you're ready to build something great, Wahb is just a message away: +92 303 2814496 ✅"
+  ],
+  default:[
+    "Great question! For the most accurate answer, WhatsApp Wahb directly at +92 303 2814496 — he replies within hours.",
+    "I'm not sure about that specific detail, but Wahb can answer directly! Email: wahbdesigns@gmail.com or WhatsApp: +92 303 2814496.",
+    "For that one, best to ask Wahb himself — he's very responsive on WhatsApp: +92 303 2814496 or wahbdesigns@gmail.com.",
+    "That's a bit outside my knowledge! Reach Wahb on WhatsApp (+92 303 2814496) and he'll give you a detailed answer."
+  ]
+};
 
-SERVICES:
-1. Front-End Development — HTML, CSS, JavaScript, React, responsive websites
-2. UI/UX Design — Figma, wireframes, prototypes, user research
-3. WordPress Development — custom themes, WooCommerce, SEO, performance
-
-EXPERIENCE: 3+ years
-PROJECTS: 50+ completed
-CLIENTS: 30+ happy clients
-DELIVERY: 100% on-time
-
-PRICING:
-- Simple landing page: from PKR 15,000
-- Full website: PKR 30,000–80,000+
-- UI/UX design: PKR 10,000–40,000
-- WordPress site: PKR 20,000–60,000+
-- Custom quotes available via WhatsApp or email
-
-TIMELINE:
-- Simple sites: 3–5 days
-- Full projects: 1–3 weeks
-- Rush delivery available on request
-
-CAREER:
-- 2021: Started HTML/CSS coding
-- 2022: Started UI/UX design with Figma
-- 2023: WordPress development + freelancing
-- 2024-Now: Full-stack digital creator
-
-TOOLS: HTML, CSS, JavaScript, React, Figma, WordPress, WooCommerce, VS Code, Git
-
-CONTACT: WhatsApp +92 303 2814496 or wahbdesigns@gmail.com
-
-Respond naturally and helpfully. Keep replies concise (2-4 sentences max). Never repeat the same answer twice in a row. Be friendly and professional.
-`;
-
-const cbHistory = [{role:"user",content:"System: "+SITE_CONTEXT}];
-let lastBotMsg = "";
-
-async function callClaude(userMsg){
-  cbHistory.push({role:"user",content:userMsg});
-  try{
-    const res = await fetch("https://api.anthropic.com/v1/messages",{
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({
-        model:"claude-sonnet-4-20250514",
-        max_tokens:180,
-        system: SITE_CONTEXT,
-        messages: cbHistory.filter(m=>m.role!=="user"||!m.content.startsWith("System:")).slice(-10)
-      })
-    });
-    const data = await res.json();
-    const reply = data.content?.[0]?.text || "Great question! Feel free to reach out on WhatsApp at +92 303 2814496 for more details.";
-    cbHistory.push({role:"assistant",content:reply});
-    lastBotMsg = reply;
-    return reply;
-  }catch(e){
-    return "I'm having a moment! Please reach Wahb directly on WhatsApp: +92 303 2814496 😊";
-  }
+var usedIdx = {};
+function getAnswer(key){
+  var arr = ANSWERS[key] || ANSWERS["default"];
+  if(!usedIdx[key]) usedIdx[key] = [];
+  var available = arr.map(function(_,i){return i}).filter(function(i){return usedIdx[key].indexOf(i)===-1});
+  if(available.length===0){usedIdx[key]=[];available=arr.map(function(_,i){return i})}
+  var pick = available[Math.floor(Math.random()*available.length)];
+  usedIdx[key].push(pick);
+  return arr[pick];
 }
 
-function addMsg(txt,type){
-  const b=document.getElementById("cbBody");
-  const d=document.createElement("div");
-  d.className="msg "+type;d.textContent=txt;
-  b.appendChild(d);b.scrollTop=b.scrollHeight;
+function detectIntent(msg){
+  var m = msg.toLowerCase().trim();
+  // combo checks first
+  if((m.indexOf("front")>=0||m.indexOf("html")>=0||m.indexOf("landing")>=0)&&(m.indexOf("price")>=0||m.indexOf("cost")>=0||m.indexOf("kitna")>=0||m.indexOf("charge")>=0)) return "pricing";
+  if((m.indexOf("ui")>=0||m.indexOf("design")>=0||m.indexOf("figma")>=0)&&(m.indexOf("price")>=0||m.indexOf("cost")>=0||m.indexOf("kitna")>=0)) return "pricing";
+  if((m.indexOf("wordpress")>=0||m.indexOf("wp")>=0)&&(m.indexOf("price")>=0||m.indexOf("cost")>=0||m.indexOf("kitna")>=0)) return "pricing";
+  // single intent
+  var keys = Object.keys(KB);
+  for(var k=0;k<keys.length;k++){
+    var words = KB[keys[k]];
+    for(var w=0;w<words.length;w++){
+      if(m.indexOf(words[w])>=0) return keys[k];
+    }
+  }
+  return "default";
+}
+
+function addCBMsg(txt, type){
+  var b = document.getElementById("cbBody");
+  var d = document.createElement("div");
+  d.className = "msg " + type;
+  if(type==="bot typing"){
+    d.innerHTML = '<div class="typing-dots"><span></span><span></span><span></span></div>';
+  } else {
+    d.textContent = txt;
+  }
+  b.appendChild(d);
+  b.scrollTop = b.scrollHeight;
   return d;
 }
 
-async function cbSend(){
-  const inp=document.getElementById("cbInp");
-  const val=inp.value.trim();if(!val)return;
-  addMsg(val,"user");inp.value="";
-  const typing=addMsg("","bot typing");
-  const reply=await callClaude(val);
-  typing.className="msg bot";typing.textContent=reply;
-  document.getElementById("cbBody").scrollTop=9999;
+function processReply(userMsg, typingEl){
+  setTimeout(function(){
+    var intent = detectIntent(userMsg);
+    var reply = getAnswer(intent);
+    typingEl.className = "msg bot";
+    typingEl.textContent = reply;
+    document.getElementById("cbBody").scrollTop = 9999;
+  }, 600);
 }
 
-async function chipSend(txt){
-  addMsg(txt,"user");
-  const typing=addMsg("","bot typing");
-  const reply=await callClaude(txt);
-  typing.className="msg bot";typing.textContent=reply;
-  document.getElementById("cbBody").scrollTop=9999;
+function cbSend(){
+  var inp = document.getElementById("cbInp");
+  var val = inp.value.trim();
+  if(!val) return;
+  addCBMsg(val, "user");
+  inp.value = "";
+  var typing = addCBMsg("", "bot typing");
+  processReply(val, typing);
 }
 
-function toggleCB(){document.getElementById("chatbot").classList.toggle("open")}
+function chipSend(txt){
+  addCBMsg(txt, "user");
+  var typing = addCBMsg("", "bot typing");
+  processReply(txt, typing);
+}
+
+function toggleCB(){
+  document.getElementById("chatbot").classList.toggle("open");
+}
 </script>
 </body>
 </html>
